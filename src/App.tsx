@@ -1,4 +1,5 @@
-import { Container } from './components/Container';
+import { Container } from './components/container';
+import { Heading } from './components/heading';
 import './styles/global.css';
 import './styles/theme.css';
 
@@ -6,19 +7,10 @@ export function App() {
   return (
     <>
       <Container>
-        <section>LOGO</section>
+        <Heading>LOGO</Heading>
       </Container>
       <Container>
-        <section>MENU</section>
-      </Container>
-      <Container>
-        <section>FORM</section>
-      </Container>
-      <Container>
-        <section>FOOTER</section>
-      </Container>
-      <Container>
-        <section>FOOTER</section>
+        <Heading>MENU</Heading>
       </Container>
     </>
   );
