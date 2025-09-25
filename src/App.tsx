@@ -4,6 +4,7 @@ import { CountDown } from './components/countDown';
 import { Cycles } from './components/cycles';
 import { DefaultButton } from './components/defaultButton';
 import { DefaultInput } from './components/defaultInput';
+import { Footer } from './components/footer';
 import { Logo } from './components/logo';
 import { Menu } from './components/menu';
 import './styles/global.css';
@@ -41,6 +42,9 @@ export function App() {
             <DefaultButton icon={<PlayCircleIcon />}>Enviar</DefaultButton>
           </div>
         </form>
+        <Container>
+          <Footer />
+        </Container>
       </Container>
     </>
   );
