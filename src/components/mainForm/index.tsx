@@ -2,6 +2,7 @@ import { PlayCircleIcon } from 'lucide-react';
 import { useRef } from 'react';
 import { useTaskContext } from '../../contexts/task-context/useTaskContext';
 import type { TaskModel } from '../../models/taskModel';
+import { formatSecondsToMinutes } from '../../utils/formatSecondsToMinutes';
 import { getNextCycle } from '../../utils/getNextCycle';
 import { getNextCycleType } from '../../utils/getNextCycleTyoe';
 import { Cycles } from '../cycles';
@@ -21,7 +22,7 @@ export function MainForm() {
     const newTask: TaskModel = {
       id: crypto.randomUUID(),
       name: taskName,
-      duration: 1,
+      duration: state.config[nextCycleType],
       startDate: Date.now(),
       completeDate: null,
       interruptDate: null,
@@ -35,7 +36,7 @@ export function MainForm() {
       activeTask: newTask,
       currentCycle: nextCycle,
       secondsRemaining,
-      formattedSecondsRemaining: '00:00',
+      formattedSecondsRemaining: formatSecondsToMinutes(secondsRemaining),
       tasks: [...prev.tasks, newTask],
     }));
   }
