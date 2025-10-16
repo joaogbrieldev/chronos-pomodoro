@@ -55,6 +55,11 @@ export function MainForm() {
       <div className='formRow'>
         <p>Lorem ipsum dolor sit amet.</p>
       </div>
+      {state.currentCycle > 0 && (
+        <div className='formRow'>
+          <p>Task: {state.activeTask?.name}</p>
+        </div>
+      )}
       <div className='formRow'>
         <Cycles />
       </div>
